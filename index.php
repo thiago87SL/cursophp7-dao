@@ -2,10 +2,9 @@
 
 require_once("config.php");
 
-$sql = new Sql();
+$root = new Usuario();
+$root->loadById(4);
 
-$usuarios = $sql->select("SELECT * FROM tb_usuarios ORDER BY idusuario");
-
-echo json_encode($usuarios);
+echo $root;
 
 ?>
