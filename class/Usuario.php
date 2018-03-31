@@ -39,7 +39,20 @@ class Usuario{
 		$this->dtcadastro = $value;
 	}
 
-	public function loadById($id){
+	public static function selectAll():array{
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM tb_usuarios ORDER BY dtcadastro");
+	}
+
+	public static function selectByLogin($login):array{
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :search ORDER BY dtcadastro", array(
+				':search'=>"%".$login."%"
+			)
+		);
+	}
+
+	public function selectById($id){
 		$sql = new Sql();
 		$results = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(":ID"=>$id));
 

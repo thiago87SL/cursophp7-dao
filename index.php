@@ -2,9 +2,17 @@
 
 require_once("config.php");
 
-$root = new Usuario();
-$root->loadById(4);
+// select one
+/*$root = new Usuario();
+$root->selectById(4);
+echo $root;*/
 
-echo $root;
+// select all
+//echo json_encode(Usuario::selectAll());
+
+// select as many as the login are similar
+echo json_encode(Usuario::selectByLogin("a"));
+
+
 
 ?>
