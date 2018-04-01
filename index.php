@@ -24,9 +24,16 @@ echo $root;*/
 //echo $aluno;
 
 // update usuario
-$usuario = new Usuario();
+/*$usuario = new Usuario();
 $usuario->selectById(8);
 $usuario->update("Thiallisson","dskfs934fm34343c343");
+echo $usuario;*/
+
+// delete usuario
+$usuario = new Usuario();
+$usuario->selectById(7);
+$usuario->delete();
 echo $usuario;
+
 
 ?>
